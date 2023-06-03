@@ -1,0 +1,14 @@
+void main(){
+var a = 10;
+  var b = 100;
+   print(b < a);
+  
+  var nameOne = 'Jose';
+  var nameTwo = 'Mimi';
+  print(nameOne = nameTwo);
+  print(nameOne != nameTwo); 
+  
+  
+  var c =50;
+print(c is String);
+}
