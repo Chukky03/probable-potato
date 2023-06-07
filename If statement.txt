@@ -1,0 +1,16 @@
+void main(){
+ var name = 'Greg';
+  var wrongName = 'Wrong';
+  var storedName = 'Greg';
+  
+
+  if (wrongName == storedName){
+    print('Name Matched stored name');
+    print('Welcome to the app');
+  }else if(wrongName[wrongName.length-1]=='g'){
+    print('Wrong name but close, last letter is g');
+  }else{
+    print('Name provided did not match stored name');
+  }
+  
+} 
