@@ -1,0 +1,33 @@
+void main(){
+
+int x = 6;
+  print('Before the While Loop');
+  while (x <= 5){
+    print('While Loop: $x');
+    x++;
+  }
+  print('After While Loop');
+  }
+// Before While Loop
+// After While Loop
+The while condtion will not execute becaue x is not less than or equal to 5
+<<<<<<<< While Loop>>>>>>>>>>>>>>>>>
+
+
+
+void main(){
+
+int x = 6;
+  print('Before the While Loop');
+  do{
+   print('do-while loop: $x');
+    x++;
+  }while (x <= 5);
+  print('After While Loop');
+  }
+
+//Before the While Loop
+//do-while loop: 6
+//After While Loop
+<<<<<<<< do-while loop>>>>>>>>>>>>>>>
+
