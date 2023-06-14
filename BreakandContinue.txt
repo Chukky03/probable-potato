@@ -1,0 +1,40 @@
+void main(){
+
+ for(var i= 0; i<=5; i++){
+   print(i);
+   if (i==3){
+     print('Uh oh, i is 3');
+     break;
+   }
+ }
+  
+  }
+
+//0
+//1
+//2
+//3
+//Uh oh, i is 3
+
+exmaple of break>>>>>>>>>>>>>>>>
+
+
+
+void main(){
+
+ for(var i= 0; i<=5; i++){
+   if (i==3){
+     continue;
+   }else{
+     print(i);
+   }
+ }
+  
+  }
+//0
+//1
+//2
+//4
+//5
+
+Example of continue>>>>>>>>>>
