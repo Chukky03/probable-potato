@@ -1,0 +1,23 @@
+void main(){
+
+  print(contains([1,2,3],2));
+}
+
+bool contains(List<int> numbers, int searchValue){
+  int i =0;
+  while (i<numbers.length){
+    if(numbers[i]== searchValue){
+      return true;
+    }
+    i++;
+  }
+  return false;
+}
+
+<<<< example of while loop using function>>>>
+
+This argument is to determine if 2 is in the number in the list ([1,2,3])
+thw while loop runs to check each numbers in the list till the number 2 is found if it is found 
+in the list the ouput prints out true.
+
+return false is to print out false if none of the numbers in the list is being looked for..

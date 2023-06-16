@@ -1,0 +1,21 @@
+void main(){
+var result = grade(101);
+  print(result);
+}
+
+String grade(int score){
+  if (score>100 || score<0){
+    return "Incorrect Value Range";
+  }
+  if (score== 100){
+    return "Perfect Score";
+  }else if (score >= 60){
+    return "Pass";
+  }else {
+    return "Fail";
+  }
+}
+/// incorect value range.
+
+
+<<< This is an exapmle of using if statemnt in a function>>>>>>

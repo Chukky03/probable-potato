@@ -1,0 +1,26 @@
+void main(){
+print(calculateSum([1,2,3,4,5]));
+  
+}
+
+int calculateSum(List<int> numbers){
+  int sum = 0;
+  for (int i=0;i<numbers.length;i++){
+    sum = sum + numbers[i];
+  }
+  return sum;
+}
+// 15
+
+<<<Example of using a for loop in a function>>>>>
+
+The calculatedsum is an int list, its aim is to print out the sum of each int in the list 
+starting from from zero as the sum... whatever the sum is will be added to each int,1,2,3,4,5 
+it qill stop at five because of the numbers.length syntax staing that the addidtion willbe determined 
+by the lenght of the number in the list.
+i.e sum = 0 + 1
+    sum = 1 + 2
+    sum = 3 + 3
+    sum = 6 + 4
+    sum = 10 + 5  total sum is 15
+
