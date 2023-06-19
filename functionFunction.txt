@@ -1,0 +1,24 @@
+var globalVar= 'GLOBAL';
+void main(){
+  print('Global var is: $globalVar');
+ var localVar= 'LOCAL';
+  
+  print ('Local var is: $localVar');
+   anotherFunction();
+  }
+
+void anotherFunction(){
+  print('Another func referneces: $globalVar');
+}
+
+<<< This exmaple is to show how functions can be nested or put together>>>>
+<<<< First of all they are three types of variables:
+Global variables: these are variables that are acceesible anywhere in the dart file.
+(((var globalVar = 'GLOBAL')))). They are outside of any function not inside>>>>>> 
+
+Local variables: They are limited to only variables inside the main function.
+((( var localVar = 'LOCAL'))) In the code above the second function ((( void anotherFunction(){}))))
+can't call the local function ((( var localVar = 'LOCAL'))), becuae it is written in the main function.
+
+
+The third example is in the next note and code<<<functionNested>>>>

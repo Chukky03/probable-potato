@@ -1,0 +1,20 @@
+
+var globalVar= 'GLOBAL';
+void main(){
+  print('Global var is: $globalVar');
+ var localVar= 'LOCAL';
+  
+  print ('Local var is: $localVar');
+   
+  void nestedFunction(){
+    print(globalVar);
+    print(localVar);
+    var nestedVar = 'NESTED';
+    print(nestedVar);
+  }
+  nestedFunction();
+  
+  }
+
+<<< nested fuction is the combination of two function together, in this example the void main and 
+void nestedFunction are joined together>>>>
