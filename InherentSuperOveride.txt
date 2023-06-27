@@ -1,0 +1,34 @@
+
+class Animal{
+  void eat(){
+    print('Animal is eating!');
+  }
+}
+
+class Dog extends Animal{
+  void bark(){
+    print('Dog is barking!');
+    super.eat();
+  }
+  @override
+  void eat(){
+    print('Dog is eating overide the parent method!');
+  }
+  
+}
+
+
+void main(){
+  Dog myDog = Dog();
+  myDog.bark();
+  myDog.eat();
+}
+
+
+
+<<< This is an example of how Inherent can be implemented, override is used to stop the parent method from printing,
+but you can also ovveride and still call out the parent method by using [super,method()]>>>>>
+
+<<< The Parent method or class here is [class Animal{void eat(){}]>>>>>
+
+<<< This is the syntax to link the inherent to it's parent classs [Class Child extend Parent]>>>>>>>
