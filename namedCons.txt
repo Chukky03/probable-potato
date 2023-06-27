@@ -1,0 +1,19 @@
+
+
+class Person{
+  String name= 'default';
+  int age= 0;
+ // Named constructors syntax 
+ Person.fromMap(Map myMap){
+   name = myMap['name'];
+   age = myMap['age'];
+ }
+} 
+
+void main(){
+Map mySetup = {'name': 'Chukky','age':30};
+Person examplePerson =Person.fromMap(mySetup);
+  
+  print(examplePerson.age);
+  print(examplePerson.name);
+}

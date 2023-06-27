@@ -1,0 +1,19 @@
+class Person{
+String name = 'default';
+  int age = 0;
+}
+
+
+void main(){
+  
+  Person person1= Person(); 
+  print(person1.age);
+  print(person1.name);
+  
+  person1.age=30;
+  person1.name = 'Chuks';
+    
+   print(person1.age);
+  print(person1.name);  
+   
+}

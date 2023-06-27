@@ -1,0 +1,15 @@
+
+
+class Person{
+  String name;
+  int age;
+//PARAMITIIZED CONSTRUCTOR  
+Person(this.age,this.name);  
+}
+
+void main(){
+Person examplePerson =Person(30,'Chukky');
+  
+  print(examplePerson.age);
+  print(examplePerson.name);
+}
