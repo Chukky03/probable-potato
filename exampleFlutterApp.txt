@@ -1,0 +1,19 @@
+import 'package:flutter/material.dart';
+void main(){
+  runApp(MaterialApp(
+    theme: ThemeData(brightness:Brightness.dark,primaryColor:Colors.blueGrey),
+    home:Scaffold(
+      appBar: AppBar(title: const Text('AppBar Title'),
+                    ),
+      body: const Center(child: Text("Some Text"),
+      ),
+    ),
+  
+  ));
+}
+
+<<<<Example of how a dart code can be executed in flutter>>>
+<<<<< import 'package:flutter/material.dart';>>>>> Its a dart widget used for caled material design
+<<<<<runApp is a sytanx that takes a widget and pushes it into your screen..without using runApp your code wont be shown on the screen>>>>>
+<<<<MaterialApp is a widget or you can say a container widget where all the other child widget can be written or placed>>>
+<<<<Scaffold is also widget used for basic visual structure for app screen that shows elements like appbar,bottom navigation bar,body>>>>

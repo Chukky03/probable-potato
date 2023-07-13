@@ -1,0 +1,40 @@
+import 'package:flutter/material.dart';
+
+
+void main(){
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+      body:Center(
+        child:UserButton(),
+        ),
+        ),
+        ),
+  );
+}
+
+class UserButton extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return GestureDetector(onTap:(){
+      print('The User button was tapped!');
+    },
+    child: Container(
+      height: 60.0,
+      padding:const EdgeInsets.all(8.0),
+      margin:const EdgeInsets.symmetric(horizontal:8.0),
+
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(5.0),
+      color: Colors.red[600],
+    ),
+    child: const Center(child: Text('CLICK HERE!'),
+    ),
+    ),
+    );
+  }
+}
+
+<<<< This is a code that explains how GestureDetectors can be used>>>
+
+<<< The container acts as a button>>> When clicked on the terminal will display The user botton was tapped 
