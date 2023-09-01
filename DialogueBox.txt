@@ -1,0 +1,72 @@
+import 'package:flutter/material.dart';
+
+void main()=> runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(title: 'Dialog Demo',home:MyHomePage());
+  }
+}
+
+class MyHomePage extends StatefulWidget{
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage>{
+  String inputText ='';
+
+  void showInputDialog(){
+    showDialog(
+      context: context,
+       builder:(BuildContext context){
+        TextEditingController controller =TextEditingController();
+
+        return AlertDialog(
+          title: const Text('Enter some content'),
+          content: TextField(
+            controller:controller,
+            decoration: const InputDecoration(hintText:'Enter some text'),
+            
+          ),
+          actions:<Widget> [
+            TextButton(
+              child:Text('Cancel'),
+              onPressed: (){
+                Navigator.of(context).pop();
+              },
+              ),
+              TextButton(onPressed: (){
+               setState(() {
+                 inputText=controller.text;
+               });  Navigator.of(context).pop();
+              }, child:const Text('Save'),
+              ),
+          ],
+        );
+    }
+    );
+}
+
+@override
+Widget build(BuildContext context){
+  return Scaffold(
+    appBar:AppBar(
+     title:const Text("My New App!")) ,
+    body: Center(
+      child:Text(
+     inputText.isEmpty ? 'Tap icon to enter text' : '$inputText' // This is a Tenary operator
+     //  This is another way of writing if statements 
+     // Instead of using bulk if statement in your code this makes it easier to write
+      )
+      ) ,
+      floatingActionButton: FloatingActionButton(
+        onPressed: showInputDialog,
+       child: Icon(Icons.edit),
+        ),
+      );
+}
+
+
+}

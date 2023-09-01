@@ -1,0 +1,37 @@
+import 'package:flutter/material.dart';
+
+void main()=> runApp(MyApp());
+
+class  MyApp extends StatelessWidget{
+  
+  @override
+  Widget build(BuildContext context){
+
+    final items = ['item1', 'item2', 'item3'];
+
+
+   return MaterialApp(
+    title: 'example',
+   home: Scaffold(
+    appBar: AppBar(title: Text('CHUKS')),
+    body: ListView.builder(
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        final item = items[index];
+      
+       return ListTile(
+        title: Text(item),
+        subtitle: Text('subtitle'),
+        onTap: (){
+          print('You just tapped on $item');
+        },
+       );
+
+      },
+    ),
+    )
+    );
+  }
+}
+
+<<<< Another example of how you can create a ListView widget but this time around using a simplified ListView.Builder>>>>>>
