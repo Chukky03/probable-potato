@@ -1,0 +1,103 @@
+
+
+import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
+import 'dart:async';
+import 'dart:io';
+
+
+void main (){
+  runApp(
+    MaterialApp(title: 'Demo', home: FlutterDemo(storage:UserInputStorage()))
+  );
+}
+
+class UserInputStorage{
+
+  Future<String> get _localPath async {
+    final directory = await getApplicationDocumentsDirectory();
+    return directory.path;
+  }
+ Future<File> get _localFile async{
+  final path = await _localPath;
+  return File('$path/input.txt');
+ }
+
+ Future<String> readUserInput() async{
+  try{
+    final file = await _localFile;
+    final contents = await file.readAsString();
+    return contents;
+  }catch(error){
+    return '';
+  }
+ }
+
+ Future<File> writeUserInput(String userInput) async{
+  final file = await _localFile;
+  return file.writeAsString('$userInput');
+ }
+
+
+}
+
+class FlutterDemo extends StatefulWidget{
+  const FlutterDemo({Key? key, required this.storage}) : super(key:key);
+final UserInputStorage storage;
+
+@override
+State<FlutterDemo> createState()=> _FlutterDemo();
+}
+
+
+class _FlutterDemo extends State<FlutterDemo>{
+
+  final userController = TextEditingController();
+
+  @override
+  void initState(){
+    super.initState();
+    widget.storage.readUserInput().then((value) {
+      setState(() {
+        userController.text = value;
+      });
+    });
+  }
+
+Future<File> _saveUserInput(){
+  return widget.storage.writeUserInput(userController.text);
+}
+
+@override
+Widget build(BuildContext context){
+  return Scaffold(appBar: AppBar(title: Text(userController.text.isEmpty ? 'DEMO' : userController.text)),
+  body: Center( child: Padding(padding: EdgeInsets.all(16.0),
+    child: TextField(
+     controller:  userController, 
+    decoration: InputDecoration(
+      labelText: 'Enter Text'))
+      )      
+      ),
+  floatingActionButton: FloatingActionButton(onPressed: (){
+    setState(() {
+      _saveUserInput();
+    });
+  },
+  tooltip: 'SAVE',
+  child: const Icon(Icons.save),
+  
+  ) ,
+  );
+}
+
+
+
+
+
+
+}
+
+
+
+<<< Design of a stateless widget wereby the tefield is updated to the app bar>>>
+<< even if the app is closed the previous text will still be saved to the appbar>>>>

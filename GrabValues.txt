@@ -1,0 +1,82 @@
+import 'package:flutter/material.dart';
+
+
+void main()=> runApp(const MyApp());
+
+
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  
+  @override
+  Widget build(BuildContext context){
+    return  const MaterialApp(title: 'Example',home: MyCustomForm());
+  }
+}
+
+class MyCustomForm extends StatefulWidget{
+  const MyCustomForm({super.key});
+
+  @override
+  State<MyCustomForm> createState() => _MyCustomFormState();
+}
+
+
+class _MyCustomFormState extends State<MyCustomForm>{
+
+ final firstController = TextEditingController();
+final secondController = TextEditingController();
+final thirdController = TextEditingController();
+@override
+void dispsose(){
+  firstController.dispose();
+  secondController.dispose();
+  thirdController.dispose();
+  super.dispose();
+}
+  
+
+@override
+Widget build (BuildContext context){
+  return Scaffold(appBar: AppBar(title: const Text('Text input'),),
+  body: Padding(padding: const EdgeInsets.all(16.0),
+  child: Column(children: [
+    TextField(
+      controller: firstController,
+      decoration: const InputDecoration(labelText: 'Name'),),
+     
+     
+     TextField(
+      controller: thirdController,
+      decoration: const InputDecoration(labelText: 'Institution'),),
+
+
+    TextField(
+      controller: secondController,
+      decoration: const InputDecoration(labelText: 'Email'),),
+  ],),),
+
+
+  floatingActionButton: FloatingActionButton(onPressed:(){
+   showDialog(context: context, builder: ((context) {
+     return AlertDialog(
+      content: Column(children: [Text('First Value: ${firstController.text}'),
+      const SizedBox(height: 22),
+      Text('Third Value: ${thirdController.text}'),
+      const SizedBox(height: 22,),
+      Text('Second Value: ${secondController.text}')],),
+     );
+   }));
+  },
+  child: const Icon(Icons.text_fields),
+  tooltip: 'Show me the Values',
+
+  ),
+  
+  
+  );
+}
+
+}
+
+<<< This example code shows how to grab texfield and show them in a dialogue box after they are submitted>>>>
